@@ -1,0 +1,273 @@
+
+
+
+## isticmalka evcplus
+infile = open('GB.txt', 'r')
+    
+file_content=infile.read()
+koodka=int(file_content)
+infile.close()
+       
+
+balance=150
+def main():
+    try:
+        evc_plus = (input(" fadlan gali *770# "))
+        if evc_plus  == "*770#":
+            print("-EVCPLUS-")
+            binkaada = int(input(" Fadlan geli pin-kaaga (enter pin) : "))
+            if binkaada == koodka:
+                print("-----EVCPlus------")
+                print("1. Itus haraaga\n2. Kaarka Hadalka\n3. Bixi Biil\n4. U Wareeji EVCPlus\n5. Warbixin Kooban\n6. Salaam Bank\n7. Maareynta\n8. TAAJ")
+                is_ka_dooro_mid_lee=int(input(' fadlan number dooro: '))
+                if is_ka_dooro_mid_lee==1:
+                    qeybta_haraaga()
+                elif is_ka_dooro_mid_lee==2:
+                     qaybta_kaarka()                            
+                elif is_ka_dooro_mid_lee==3:
+                    qaybta_biilka()
+                elif is_ka_dooro_mid_lee==4:
+                    qaybta_u_wareejinta()
+                elif is_ka_dooro_mid_lee==5:
+                    qaybta_warbixinta()
+                elif is_ka_dooro_mid_lee==6:
+                    print('akoon ma lihid')
+                    print('fadlan isi soo diiwaan geli')
+                elif is_ka_dooro_mid_lee==7:
+                    qeebta_maaraynta()
+                elif is_ka_dooro_mid_lee==8:
+                    print('waa xawaalad')
+                    print('ma wax baad xawili rabtaa adaa soomaaliya jooga bee')
+                else:
+                    print('fadlan dooro mid sax eh')
+        
+            else:
+                print("Numberka sirta ah waa khalad")
+        else:
+            print('qaabka aad u isticmaashay waa qalad')
+    except:
+        print('error')
+        print('fadlan geli wixi la guu diray')
+def qeybta_haraaga():
+    print('haraagaagu waa :',balance)
+    
+def qaybta_kaarka():
+    print("1. Ku Shubo Airtime\n2. Ugu Shub Airtime\n3. Mifi package\n4. ku shubo Internet\n5. Ugu shub qofkale (MMT)")
+    dooro=int(input('nunber dooro: '))
+    if dooro==1:
+        Ku_Shubo_Airtime()
+    elif dooro==2:
+        Ugu_Shub_Airtime()
+    elif dooro==3:
+        print("mifi package is not working")
+    elif dooro==4:
+        print("ku shubo Internet is not working")
+    elif dooro==2:
+        print("Ugu shub qofkale is not working")
+    else:
+        print('fadlan dooro number sax eh')
+    
+    
+def Ku_Shubo_Airtime():
+    geli_lacagta=float(input('fadlan geli lacagta: '))
+    if geli_lacagta<0:
+        print('waxaad galisay wax qalad')
+    elif geli_lacagta<balance:
+        print('Ma hubtaa inaad $',geli_lacagta,'ugu shubtid undifined?')
+        print('1-haa')
+        print('2-maya')
+        hubin=int(input('  '))
+        if hubin==1:
+            haraa=balance-geli_lacagta
+            print('haraagaagu waa',haraa)
+        else:
+            print('mahad sanid')
+    else:
+        print('haraagaaga kugu ma filna')
+        
+def Ugu_Shub_Airtime():
+    geli_number=int(input('fadlan geli mobilka: '))
+    geli_lacagta=float(input('fadlan geli lacagta: '))
+    if geli_lacagta<0:
+        print('waxaad galisay wax qaldan')
+    elif geli_lacagta<150:
+        print('Ma hubtaa inaad $',geli_lacagta,'ugu shubtid undifined?')
+        print('haa')
+        print('maya')
+        a=int(input('  '))
+        if a==1:
+            haraa=balance-geli_lacagta
+            print('haraagaagu waa',haraa)
+        else:
+            print('mahad sanid')
+    else:
+        print('haraagaaga kugu ma filna')
+        
+
+
+
+        
+def qaybta_biilka():
+    print('bixi biil \n1-post paid \n2-ku iibso')
+    geli=int(input(' '))
+    if geli==1:
+        post_paid()
+    elif geli==2:
+        ku_iibso()
+    else:
+        print('fadlan dooro number sax eh')
+    
+    
+def post_paid():
+    print('1-ogoow biilka \n2-bixi biilka \n3-ka bixi biilka')
+   
+    number=float(input('fadlan dooro number: '))
+    if number==1:
+        print('si aad biil u bixi so fadlan isticmaal adeega caawiye *141#')
+    elif number==2:
+        geli_lacagta=float(input('fadlan geli lacagta: '))
+        if geli_lacagta==0:
+            print('waxaad galisay wax qaldan')
+        if geli_lacagta<balance:
+            print('Ma hubtaa inaad bixisay biil lacagtiisu tahay $',geli_lacagta,)
+            print('1-haa')
+            print('2-maya')
+            hubin=int(input('  '))
+            if hubin==1:
+                haraa=balance-geli_lacagta
+                print('haraagaagu waa',haraa)
+            else:
+                print('mahad sanid')
+        else:
+            ('haraagaaga kugu ma filna')
+    elif number==3:
+        geli_number=int(input('fadlan geli mobilka: '))
+        geli_lacagta=float(input('fadlan geli lacagta: '))
+        if geli_lacagta==0:
+            print('waxaad galisay wax qaldan')
+        if geli_lacagta<balance:
+            print('Ma hubtaa inaad bixisid bill lacagtiisu tahay :$',geli_lacagta,'oo laga rabo tel No ',geli_numbe)
+            print('haa')
+            print('maya')
+            a=int(input('  '))
+            if a==1:
+                haraa=balance-geli_lacagta
+                print('haraagaagu waa',haraa)
+            else:
+                print('mahad sanid')
+        else:
+            ('haraagaaga kugu ma filna')
+    else:
+        print('fadlan dooro number sax eh')
+    
+    
+def ku_iibso():
+    aqoonsi=int(input('Fadlan geli aqoonsiga ganacsiga: '))
+    print('Partner doesnt exist')
+    
+def qaybta_u_wareejinta():
+    geli_number=int(input('fadlan geli mobilka: '))
+    geli_lacagta=float(input('fadlan geli lacagta: '))
+    if geli_lacagta<0:
+        print('lacagta aad galisay waa qalad')
+    elif geli_lacagta<balance:
+        print('Ma hubtaa inaad $',geli_lacagta,'u wareejisid ',geli_number,)
+        print('1-haa')
+        print('2-maya')
+        a=int(input('  '))
+        if a==1:
+            result=balance-geli_lacagta
+            print('haraagaagu waa',result,'Tar:08/11/2020')
+        else:
+            print('mahad sanid')
+            print("fadlan gali 61XXXXXXX")
+    else:
+        print('haraagaaga kugu ma filna')
+        
+def qaybta_warbixinta():
+    print("Warbixin Kooban\n1. last action\n2. Wareejinta u danbeesay\n3. Iibsashadii u danbeesay\n4. last 3 actions\n5. Email Me My Activity")
+    doro_number = int(input(""))
+    if doro_number == 1:
+        print(" waxa kuso baxayo lacagta u danbesay aad dirtay")
+    elif doro_number == 2:
+        print("Statement")
+        print("1. U dirtay")
+        print("2. ka heshay")
+    elif doro_number == 3:
+        print("Fadlan Geli aqoonsiga ganacsiga")
+    elif doro_number == 4:
+        print("Your Mini statement has been sent as SMS to your registered mobile no")
+    elif doro_number == 5:
+        print("fadlan gali gmailkaga")
+        print('nooma diiwaan gashano')
+    else:
+        print('fadlan dooro number sax eh')
+    
+
+def qeebta_maaraynta():    
+    print("Maareynta")
+    print("1. Badal Lambarka Sirta ah\n2. Bedel luqadda\n3. wargelin mobile lumay\n4. lacag xirasho\n5. U celi lacag qaldantay\n6. Enable mobile Banking")
+      
+    wax_dooro = int(input(" "))
+    if wax_dooro == 1:
+        pin = int(input("Fadlan Geli pin-kaaga cusub? "))
+        hubi = int(input("Hubi pin-kaaga cusub "))
+        if hubi == pin:
+            print("Waad ku guuleysatay ina badasho pin-kaaga ")
+        
+            infile=open('GB.txt','w')
+    
+            infile.write(str(hubi))
+    
+            infile.close()
+    
+        
+    
+        else:
+            print("your input did not match, please try again")
+    elif wax_dooro == 2:
+        print("Fadlan dooro luqada")
+        print("1. English")
+        print("2. Somali")
+        luqad = int(input(" "))
+        if luqad == 1:
+            print(" You have successfully changed your language")
+        elif luqad == 2:
+            print("Waad ku guuleysatay inaa aad badasho luqadda")
+        else:
+            print("Dooro numbarka saxda ah")
+    elif wax_dooro == 3:
+        lumay = input("Fadlan geli mobile lumay ")
+        sirta = input("fadlan gali numberkiisa sirta ah")
+        print("Ma hubtaa in aad diiwan geliso lumid numberkan", lumay, "? ")
+        print("1. haa")
+        print("2. maya")
+        lumay1 = int(input(" "))
+        if lumay1 == 1:
+            print(" waad ku guuleysatay in aad lumid u diiwan galiso", lumay, )
+        elif lumay1 == 2:
+            print("mahadsanid")
+        else:
+            print("Mahadsanid!")
+    elif wax_dooro == 4:
+        qalad = input("Fadlan geli number-ka khalad-ka ah ")
+        sax = input("fadlan geli number-kii loo rabay ")
+        mac = input("Fadlan geli macluumaad")
+        print("ma hubta in aad xirto lacagtan? ")
+        print("1. haa")
+        print("2. maya")
+        lacgata_xayiran = int(input(" "))
+        if lacgata_xayiran == 1:
+            print("Lacagtada waa lagu xayiray")
+            print("waxa lagugu shaqeyn dona ")
+            print(" sida ugu dhaqsiyaha badan")
+        elif lacgata_xayiran == 2:
+            print(" Mahadsanid!")   
+    else:
+        print('fadlan dooro number sax eh')
+    
+    
+main()
+    
+    
+    
